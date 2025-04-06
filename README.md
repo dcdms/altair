@@ -11,7 +11,7 @@ So I've created this minimal CLI called `altair` that allows me and you to run m
 First, install `altair`:
 
 ```sh
-cargo install altair
+cargo install altairsh
 ```
 
 Good! Let's say we have two Bun applications in the folders `auth` and `catalog` and we want to run them in the same process. You only need to write the following `altair.yaml` file...
