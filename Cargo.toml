@@ -1,10 +1,14 @@
 [package]
 name = "altairsh"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2024"
 authors = ["dcdms <dcdmsx@gmail.com>"]
 description = "A simple Rust script to run multiple commands at the same time."
+repository = "https://github.com/dcdms/altair"
+readme = "README.md"
 license = "MIT"
+categories = ["command-line-utilities"]
+keywords = ["cli"]
 
 [[bin]]
 name = "altair"
