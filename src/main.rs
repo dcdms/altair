@@ -59,7 +59,7 @@ async fn main() {
         token_clone.cancel();
       }
       Err(err) => {
-        eprintln!("[crun] failed to listen to shutdown signal: {}", err)
+        eprintln!("[altair] failed to listen to shutdown signal: {}", err)
       }
     }
   });
