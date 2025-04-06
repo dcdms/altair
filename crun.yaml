@@ -1,0 +1,6 @@
+commands:
+  - name: 'catalog.cooud.com'
+    run: 'bun run --cwd ../orbit dev'
+
+  - name: 'auth.cooud.com'
+    run: 'bun run --cwd ../auth dev'
