@@ -12,7 +12,7 @@ pub struct Config {
 }
 
 pub async fn read() -> Config {
-  let yml = std::fs::read_to_string(PathBuf::from("crun.yaml"))
+  let yml = std::fs::read_to_string(PathBuf::from("altair.yaml"))
     .expect("Failed to read config");
 
   serde_yml::from_str::<Config>(&yml)
