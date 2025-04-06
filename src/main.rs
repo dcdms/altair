@@ -1,11 +1,15 @@
-use altair::config;
-use tokio::{io::{ AsyncBufReadExt, BufReader }, process::Command, signal::ctrl_c};
+use altairsh::config;
+use tokio::{
+  io::{AsyncBufReadExt, BufReader},
+  process::Command,
+  signal::ctrl_c,
+};
 use tokio_util::{sync::CancellationToken, task::TaskTracker};
 
 #[tokio::main]
 async fn main() {
   let config = config::read().await;
-  
+
   let tracker = TaskTracker::new();
   let token = CancellationToken::new();
 
@@ -36,7 +40,7 @@ async fn main() {
           },
           _ = token_clone.cancelled() => {
             child.kill().await.unwrap();
-            break 
+            break
           }
         }
       }
@@ -53,7 +57,7 @@ async fn main() {
       Ok(()) => {
         tracker_clone.close();
         token_clone.cancel();
-      },
+      }
       Err(err) => {
         eprintln!("[crun] failed to listen to shutdown signal: {}", err)
       }
