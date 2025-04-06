@@ -2,7 +2,7 @@
 
 I'm currently dealing with a distributed system and it's such boring to have **8 terminal tabs** running multiple microservices and other applications. 
 
-So I've created this minimal CLI called `altair` that allows me and you to run multiple commands in a single process with a configuration file.
+So I've created this minimal CLI called `altair` that allows us to run multiple commands in a single process with a configuration file.
 
 ## Installation
 
