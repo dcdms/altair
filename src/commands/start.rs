@@ -1,4 +1,4 @@
-use crate::utils::read_config;
+use crate::utils::{read_config, run_command};
 use anyhow::Result;
 use clap::Command;
 use tokio::{
@@ -20,11 +20,16 @@ pub async fn execute() -> Result<()> {
 
   for command in config.commands {
     let token_clone = token.clone();
-    let splitted = shellwords::split(&command.run).unwrap();
+
+    if let Some(preflight) = command.preflight {
+      run_command::execute(&preflight).await?;
+    }
+ 
+    let words = shellwords::split(&command.run).unwrap();
 
     tokio::spawn(async move {
-      let mut child = ProcessCommand::new(&splitted[0])
-        .args(&splitted[1..])
+      let mut child = ProcessCommand::new(&words[0])
+        .args(&words[1..])
         .stdout(std::process::Stdio::piped())
         .spawn()
         .unwrap();

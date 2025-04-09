@@ -4,6 +4,7 @@ use std::path::PathBuf;
 #[derive(serde::Deserialize)]
 pub struct ConfigCommand {
   pub name: String,
+  pub preflight: Option<String>,
   pub run: String,
 }
 

@@ -1,6 +1,6 @@
 [package]
 name = "altairsh"
-version = "1.0.1"
+version = "1.0.2"
 edition = "2024"
 authors = ["dcdms <dcdmsx@gmail.com>"]
 description = "A simple Rust script to run multiple commands at the same time."
